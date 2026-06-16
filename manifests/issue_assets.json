@@ -1,0 +1,40 @@
+{
+  "version": "issue-assets-v0.1",
+  "issue_assets": [
+    {
+      "classification": {
+        "domain_category": "coding",
+        "issue_category": "improper_input_validation",
+        "issue_subcategory": "command_injection",
+        "cwe": ["CWE-78"]
+      },
+      "directories": {
+        "repos": ["artifacts/repos"],
+        "diffs": ["artifacts/diffs"]
+      },
+      "vulnerability_ids": ["VULN-000001"],
+      "repo_ids": ["repo_001"],
+      "diff_ids": ["DIFF-000001"],
+      "fixed_repo_ids": ["repo_001_fixed"],
+      "fixed_diff_ids": ["DIFF-000001-FIX"]
+    },
+    {
+      "classification": {
+        "domain_category": "coding",
+        "issue_category": "improper_input_validation",
+        "issue_subcategory": "path_traversal",
+        "cwe": ["CWE-22"]
+      },
+      "directories": {
+        "repos": ["artifacts/repos"],
+        "diffs": ["artifacts/diffs"]
+      },
+      "vulnerability_ids": ["VULN-000002"],
+      "repo_ids": ["repo_002"],
+      "diff_ids": ["DIFF-000002"],
+      "fixed_repo_ids": [],
+      "fixed_diff_ids": []
+    }
+  ]
+}
+

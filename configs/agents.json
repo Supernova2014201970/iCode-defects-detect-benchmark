@@ -1,0 +1,35 @@
+{
+  "agents": [
+    {
+      "agent_id": "mock_exact",
+      "agent_type": "mock",
+      "model": "deterministic",
+      "adapter": "adapters.mock",
+      "behavior": "exact",
+      "tool_profile": "static_readonly",
+      "timeout_seconds": 1800,
+      "max_output_bytes": 1048576
+    },
+    {
+      "agent_id": "mock_partial",
+      "agent_type": "mock",
+      "model": "deterministic",
+      "adapter": "adapters.mock",
+      "behavior": "partial",
+      "tool_profile": "static_readonly",
+      "timeout_seconds": 1800,
+      "max_output_bytes": 1048576
+    },
+    {
+      "agent_id": "mock_noisy",
+      "agent_type": "mock",
+      "model": "deterministic",
+      "adapter": "adapters.mock",
+      "behavior": "noisy",
+      "tool_profile": "static_readonly",
+      "timeout_seconds": 1800,
+      "max_output_bytes": 1048576
+    }
+  ]
+}
+

@@ -1,0 +1,38 @@
+{
+  "version": "vulnerabilities-v0.1",
+  "vulnerabilities": [
+    {
+      "vuln_id": "VULN-000001",
+      "repo_id": "repo_001",
+      "classification": {
+        "domain_category": "coding",
+        "issue_category": "improper_input_validation",
+        "issue_subcategory": "command_injection",
+        "cwe": ["CWE-78"]
+      },
+      "location": {
+        "file": "src/main/java/com/example/ExecController.java",
+        "function": "runCommand",
+        "start_line": 6,
+        "end_line": 8
+      }
+    },
+    {
+      "vuln_id": "VULN-000002",
+      "repo_id": "repo_002",
+      "classification": {
+        "domain_category": "coding",
+        "issue_category": "improper_input_validation",
+        "issue_subcategory": "path_traversal",
+        "cwe": ["CWE-22"]
+      },
+      "location": {
+        "file": "src/app.py",
+        "function": "read_user_file",
+        "start_line": 5,
+        "end_line": 7
+      }
+    }
+  ]
+}
+

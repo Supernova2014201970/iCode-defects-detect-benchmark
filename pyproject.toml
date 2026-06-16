@@ -1,0 +1,9 @@
+[project]
+name = "vuln-benchmark"
+version = "0.1.0"
+description = "Offline MVP for a vulnerability detection agent benchmark."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+

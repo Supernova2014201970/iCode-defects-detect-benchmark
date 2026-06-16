@@ -1,0 +1,27 @@
+{
+  "version": "diffs-v0.1",
+  "diffs": [
+    {
+      "diff_id": "DIFF-000001",
+      "patch_path": "artifacts/diffs/diff_001_bug.patch",
+      "context_repo_id": "repo_001",
+      "kind": "buggy_diff",
+      "target_vulnerabilities": ["VULN-000001"]
+    },
+    {
+      "diff_id": "DIFF-000001-FIX",
+      "patch_path": "artifacts/diffs/diff_001_fix.patch",
+      "context_repo_id": "repo_001_fixed",
+      "kind": "fixed_diff",
+      "fixed_vulnerabilities": ["VULN-000001"]
+    },
+    {
+      "diff_id": "DIFF-000002",
+      "patch_path": "artifacts/diffs/diff_002_bug.patch",
+      "context_repo_id": "repo_002",
+      "kind": "buggy_diff",
+      "target_vulnerabilities": ["VULN-000002"]
+    }
+  ]
+}
+

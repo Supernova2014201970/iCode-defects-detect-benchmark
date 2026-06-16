@@ -1,0 +1,33 @@
+{
+  "task_id": "TASK-000001",
+  "agent_id": "mock_noisy",
+  "status": "success",
+  "findings": [
+    {
+      "type": "command_injection",
+      "cwe": [
+        "CWE-78"
+      ],
+      "file": "src/main/java/com/example/ExecController.java",
+      "start_line": 6,
+      "end_line": 8,
+      "function": "runCommand"
+    },
+    {
+      "type": "sql_injection",
+      "cwe": [
+        "CWE-89"
+      ],
+      "file": "src/main/java/com/example/ExecController.java",
+      "function": "unused",
+      "start_line": 1,
+      "end_line": 1
+    }
+  ],
+  "run_metadata": {
+    "duration_seconds": 3.3e-05,
+    "cost": null,
+    "input_tokens": null,
+    "output_tokens": null
+  }
+}

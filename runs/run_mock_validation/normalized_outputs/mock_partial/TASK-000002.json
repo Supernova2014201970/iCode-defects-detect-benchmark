@@ -1,0 +1,12 @@
+{
+  "task_id": "TASK-000002",
+  "agent_id": "mock_partial",
+  "status": "success",
+  "findings": [],
+  "run_metadata": {
+    "duration_seconds": 1e-05,
+    "cost": null,
+    "input_tokens": null,
+    "output_tokens": null
+  }
+}

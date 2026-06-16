@@ -1,0 +1,1346 @@
+{
+  "run_id": "run_mock_validation",
+  "tasks": 9,
+  "agents": [
+    "mock_exact",
+    "mock_partial",
+    "mock_noisy"
+  ],
+  "validation_warnings": [],
+  "summary": {
+    "agents": {
+      "mock_exact": {
+        "tasks": 9,
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "fixed_check_pass_rate": 1.0,
+        "duration_mean": 1.5e-05,
+        "duration_p95": 3.9e-05,
+        "leaderboard_score": 1.0
+      },
+      "mock_noisy": {
+        "tasks": 9,
+        "tp": 6,
+        "fp": 9,
+        "fn": 0,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 9,
+        "precision": 0.4,
+        "recall": 1.0,
+        "f1": 0.571429,
+        "fixed_check_pass_rate": 0.0,
+        "duration_mean": 2.7e-05,
+        "duration_p95": 4e-05,
+        "leaderboard_score": 0.75
+      },
+      "mock_partial": {
+        "tasks": 9,
+        "tp": 4,
+        "fp": 0,
+        "fn": 2,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 0,
+        "precision": 1.0,
+        "recall": 0.666667,
+        "f1": 0.8,
+        "fixed_check_pass_rate": 1.0,
+        "duration_mean": 1.9e-05,
+        "duration_p95": 5e-05,
+        "leaderboard_score": 0.833333
+      }
+    },
+    "agent_modes": {
+      "mock_exact::diff": {
+        "tasks": 4,
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "fixed_check_pass_rate": null,
+        "duration_mean": 1.4e-05,
+        "duration_p95": 1.8e-05,
+        "leaderboard_score": 1.0
+      },
+      "mock_exact::fixed_check": {
+        "tasks": 1,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "fixed_check_pass_rate": 1.0,
+        "duration_mean": 4e-06,
+        "duration_p95": 4e-06,
+        "leaderboard_score": 1.0
+      },
+      "mock_exact::full_repo": {
+        "tasks": 4,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "fixed_check_pass_rate": null,
+        "duration_mean": 2e-05,
+        "duration_p95": 3.9e-05,
+        "leaderboard_score": 1.0
+      },
+      "mock_noisy::diff": {
+        "tasks": 4,
+        "tp": 4,
+        "fp": 4,
+        "fn": 0,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 4,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.666667,
+        "fixed_check_pass_rate": null,
+        "duration_mean": 2.7e-05,
+        "duration_p95": 4e-05,
+        "leaderboard_score": 0.875
+      },
+      "mock_noisy::fixed_check": {
+        "tasks": 1,
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 1,
+        "precision": 0.0,
+        "recall": null,
+        "f1": null,
+        "fixed_check_pass_rate": 0.0,
+        "duration_mean": 2.6e-05,
+        "duration_p95": 2.6e-05,
+        "leaderboard_score": 0.65
+      },
+      "mock_noisy::full_repo": {
+        "tasks": 4,
+        "tp": 2,
+        "fp": 4,
+        "fn": 0,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 4,
+        "precision": 0.333333,
+        "recall": 1.0,
+        "f1": 0.5,
+        "fixed_check_pass_rate": null,
+        "duration_mean": 2.7e-05,
+        "duration_p95": 3.3e-05,
+        "leaderboard_score": 0.833333
+      },
+      "mock_partial::diff": {
+        "tasks": 4,
+        "tp": 3,
+        "fp": 0,
+        "fn": 1,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 0,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.857143,
+        "fixed_check_pass_rate": null,
+        "duration_mean": 2.7e-05,
+        "duration_p95": 5e-05,
+        "leaderboard_score": 0.875
+      },
+      "mock_partial::fixed_check": {
+        "tasks": 1,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "fixed_check_pass_rate": 1.0,
+        "duration_mean": 4e-06,
+        "duration_p95": 4e-06,
+        "leaderboard_score": 1.0
+      },
+      "mock_partial::full_repo": {
+        "tasks": 4,
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "duplicates": 0,
+        "invalid_outputs": 0,
+        "review_candidates": 0,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.666667,
+        "fixed_check_pass_rate": null,
+        "duration_mean": 1.4e-05,
+        "duration_p95": 2.5e-05,
+        "leaderboard_score": 0.75
+      }
+    },
+    "leaderboards": {
+      "all_tasks_leaderboard": [
+        {
+          "tasks": 9,
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "fixed_check_pass_rate": 1.0,
+          "duration_mean": 1.5e-05,
+          "duration_p95": 3.9e-05,
+          "leaderboard_score": 1.0,
+          "agent_id": "mock_exact"
+        },
+        {
+          "tasks": 9,
+          "tp": 4,
+          "fp": 0,
+          "fn": 2,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "precision": 1.0,
+          "recall": 0.666667,
+          "f1": 0.8,
+          "fixed_check_pass_rate": 1.0,
+          "duration_mean": 1.9e-05,
+          "duration_p95": 5e-05,
+          "leaderboard_score": 0.833333,
+          "agent_id": "mock_partial"
+        },
+        {
+          "tasks": 9,
+          "tp": 6,
+          "fp": 9,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 9,
+          "precision": 0.4,
+          "recall": 1.0,
+          "f1": 0.571429,
+          "fixed_check_pass_rate": 0.0,
+          "duration_mean": 2.7e-05,
+          "duration_p95": 4e-05,
+          "leaderboard_score": 0.75,
+          "agent_id": "mock_noisy"
+        }
+      ],
+      "full_repo_leaderboard": [
+        {
+          "tasks": 4,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "fixed_check_pass_rate": null,
+          "duration_mean": 2e-05,
+          "duration_p95": 3.9e-05,
+          "leaderboard_score": 1.0,
+          "agent_id": "mock_exact"
+        },
+        {
+          "tasks": 4,
+          "tp": 2,
+          "fp": 4,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 4,
+          "precision": 0.333333,
+          "recall": 1.0,
+          "f1": 0.5,
+          "fixed_check_pass_rate": null,
+          "duration_mean": 2.7e-05,
+          "duration_p95": 3.3e-05,
+          "leaderboard_score": 0.833333,
+          "agent_id": "mock_noisy"
+        },
+        {
+          "tasks": 4,
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.666667,
+          "fixed_check_pass_rate": null,
+          "duration_mean": 1.4e-05,
+          "duration_p95": 2.5e-05,
+          "leaderboard_score": 0.75,
+          "agent_id": "mock_partial"
+        }
+      ],
+      "diff_leaderboard": [
+        {
+          "tasks": 4,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "fixed_check_pass_rate": null,
+          "duration_mean": 1.4e-05,
+          "duration_p95": 1.8e-05,
+          "leaderboard_score": 1.0,
+          "agent_id": "mock_exact"
+        },
+        {
+          "tasks": 4,
+          "tp": 4,
+          "fp": 4,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 4,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.666667,
+          "fixed_check_pass_rate": null,
+          "duration_mean": 2.7e-05,
+          "duration_p95": 4e-05,
+          "leaderboard_score": 0.875,
+          "agent_id": "mock_noisy"
+        },
+        {
+          "tasks": 4,
+          "tp": 3,
+          "fp": 0,
+          "fn": 1,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.857143,
+          "fixed_check_pass_rate": null,
+          "duration_mean": 2.7e-05,
+          "duration_p95": 5e-05,
+          "leaderboard_score": 0.875,
+          "agent_id": "mock_partial"
+        }
+      ],
+      "fixed_check_leaderboard": [
+        {
+          "tasks": 1,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "fixed_check_pass_rate": 1.0,
+          "duration_mean": 4e-06,
+          "duration_p95": 4e-06,
+          "leaderboard_score": 1.0,
+          "agent_id": "mock_exact"
+        },
+        {
+          "tasks": 1,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "fixed_check_pass_rate": 1.0,
+          "duration_mean": 4e-06,
+          "duration_p95": 4e-06,
+          "leaderboard_score": 1.0,
+          "agent_id": "mock_partial"
+        },
+        {
+          "tasks": 1,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 1,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null,
+          "fixed_check_pass_rate": 0.0,
+          "duration_mean": 2.6e-05,
+          "duration_p95": 2.6e-05,
+          "leaderboard_score": 0.65,
+          "agent_id": "mock_noisy"
+        }
+      ],
+      "classification_leaderboard": [
+        {
+          "agent_id": "mock_exact",
+          "classification": "coding/improper_input_validation/command_injection",
+          "tasks": 4,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "fixed_check_pass_rate": null,
+          "duration_mean": null,
+          "duration_p95": null,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "leaderboard_score": 1.0
+        },
+        {
+          "agent_id": "mock_partial",
+          "classification": "coding/improper_input_validation/command_injection",
+          "tasks": 4,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "fixed_check_pass_rate": null,
+          "duration_mean": null,
+          "duration_p95": null,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "leaderboard_score": 1.0
+        },
+        {
+          "agent_id": "mock_exact",
+          "classification": "coding/improper_input_validation/path_traversal",
+          "tasks": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "fixed_check_pass_rate": null,
+          "duration_mean": null,
+          "duration_p95": null,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "leaderboard_score": 1.0
+        },
+        {
+          "agent_id": "mock_noisy",
+          "classification": "coding/improper_input_validation/command_injection",
+          "tasks": 4,
+          "tp": 4,
+          "fp": 4,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 4,
+          "fixed_check_pass_rate": null,
+          "duration_mean": null,
+          "duration_p95": null,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.666667,
+          "leaderboard_score": 0.875
+        },
+        {
+          "agent_id": "mock_noisy",
+          "classification": "coding/improper_input_validation/path_traversal",
+          "tasks": 2,
+          "tp": 2,
+          "fp": 2,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 2,
+          "fixed_check_pass_rate": null,
+          "duration_mean": null,
+          "duration_p95": null,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.666667,
+          "leaderboard_score": 0.875
+        },
+        {
+          "agent_id": "mock_noisy",
+          "classification": "clean_or_unmapped",
+          "tasks": 2,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 2,
+          "fixed_check_pass_rate": null,
+          "duration_mean": null,
+          "duration_p95": null,
+          "precision": 0.0,
+          "recall": null,
+          "f1": null,
+          "leaderboard_score": 0.75
+        },
+        {
+          "agent_id": "mock_partial",
+          "classification": "coding/improper_input_validation/path_traversal",
+          "tasks": 2,
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "duplicates": 0,
+          "invalid_outputs": 0,
+          "review_candidates": 0,
+          "fixed_check_pass_rate": null,
+          "duration_mean": null,
+          "duration_p95": null,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null,
+          "leaderboard_score": 0.5
+        }
+      ]
+    }
+  },
+  "task_results": [
+    {
+      "task_id": "TASK-000001",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_exact",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 3.9e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000002",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_exact",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 1.2e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000003",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_exact",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000002"
+      ],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 2.3e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000004",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_exact",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 5e-06,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000005",
+      "suite_id": "suite_all_diff",
+      "agent_id": "mock_exact",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 1.8e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000006",
+      "suite_id": "suite_all_diff",
+      "agent_id": "mock_exact",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000002"
+      ],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 1.2e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000007",
+      "suite_id": "suite_command_injection_diff",
+      "agent_id": "mock_exact",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 1.2e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000008",
+      "suite_id": "suite_all_fixed_check",
+      "agent_id": "mock_exact",
+      "mode": "fixed_check",
+      "expectation": "fixed",
+      "status": "success",
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": true,
+      "fixed_failures": [],
+      "duration_seconds": 4e-06,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000009",
+      "suite_id": "suite_selected_smoke",
+      "agent_id": "mock_exact",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 1.4e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000001",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_partial",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 2.5e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000002",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_partial",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 1e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000003",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_partial",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [],
+      "fp": [],
+      "fn": [
+        "VULN-000002"
+      ],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 1.6e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000004",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_partial",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 5e-06,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000005",
+      "suite_id": "suite_all_diff",
+      "agent_id": "mock_partial",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 2.5e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000006",
+      "suite_id": "suite_all_diff",
+      "agent_id": "mock_partial",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [],
+      "fp": [],
+      "fn": [
+        "VULN-000002"
+      ],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 1.4e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000007",
+      "suite_id": "suite_command_injection_diff",
+      "agent_id": "mock_partial",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 1.8e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000008",
+      "suite_id": "suite_all_fixed_check",
+      "agent_id": "mock_partial",
+      "mode": "fixed_check",
+      "expectation": "fixed",
+      "status": "success",
+      "tp": [],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": true,
+      "fixed_failures": [],
+      "duration_seconds": 4e-06,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000009",
+      "suite_id": "suite_selected_smoke",
+      "agent_id": "mock_partial",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 5e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000001",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_noisy",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 3.3e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000002",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_noisy",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [],
+      "fp": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-001"
+        }
+      ],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-001"
+        }
+      ],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 2.5e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000003",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_noisy",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000002"
+      ],
+      "fp": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/app.py",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/app.py",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 3.2e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000004",
+      "suite_id": "suite_all_full_repo",
+      "agent_id": "mock_noisy",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [],
+      "fp": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-001"
+        }
+      ],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-001"
+        }
+      ],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 1.8e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000005",
+      "suite_id": "suite_all_diff",
+      "agent_id": "mock_noisy",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 4e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000006",
+      "suite_id": "suite_all_diff",
+      "agent_id": "mock_noisy",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000002"
+      ],
+      "fp": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/app.py",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/app.py",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 2.1e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000007",
+      "suite_id": "suite_command_injection_diff",
+      "agent_id": "mock_noisy",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 2.2e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000008",
+      "suite_id": "suite_all_fixed_check",
+      "agent_id": "mock_noisy",
+      "mode": "fixed_check",
+      "expectation": "fixed",
+      "status": "success",
+      "tp": [],
+      "fp": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "invalid_output": false,
+      "fixed_check_passed": false,
+      "fixed_failures": [
+        "VULN-000001"
+      ],
+      "duration_seconds": 2.6e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    {
+      "task_id": "TASK-000009",
+      "suite_id": "suite_selected_smoke",
+      "agent_id": "mock_noisy",
+      "mode": "diff",
+      "expectation": "detect",
+      "status": "success",
+      "tp": [
+        "VULN-000001"
+      ],
+      "fp": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "fn": [],
+      "duplicates": [],
+      "review_candidates": [
+        {
+          "type": "sql_injection",
+          "cwe": [
+            "CWE-89"
+          ],
+          "file": "src/main/java/com/example/ExecController.java",
+          "function": "unused",
+          "start_line": 1,
+          "end_line": 1,
+          "finding_id": "F-002"
+        }
+      ],
+      "invalid_output": false,
+      "fixed_check_passed": null,
+      "fixed_failures": [],
+      "duration_seconds": 2.3e-05,
+      "cost": null,
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  ]
+}

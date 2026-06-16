@@ -1,0 +1,19 @@
+{
+  "profiles": [
+    {
+      "profile_id": "static_readonly",
+      "rules": {
+        "allow_modify_code": false,
+        "allow_install_dependencies": false,
+        "allow_network": false,
+        "allow_run_tests": false,
+        "allow_build": false,
+        "allow_read_files": true,
+        "allow_search_code": true,
+        "allow_read_diff": true,
+        "allow_write_run_logs": true
+      }
+    }
+  ]
+}
+

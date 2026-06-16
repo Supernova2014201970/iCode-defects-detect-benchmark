@@ -1,0 +1,24 @@
+{
+  "task_id": "TASK-000003",
+  "agent_id": "mock_exact",
+  "status": "success",
+  "findings": [
+    {
+      "type": "path_traversal",
+      "cwe": [
+        "CWE-22"
+      ],
+      "file": "src/app.py",
+      "start_line": 5,
+      "end_line": 7,
+      "function": "read_user_file",
+      "finding_id": "F-001"
+    }
+  ],
+  "run_metadata": {
+    "duration_seconds": 2.3e-05,
+    "cost": null,
+    "input_tokens": null,
+    "output_tokens": null
+  }
+}

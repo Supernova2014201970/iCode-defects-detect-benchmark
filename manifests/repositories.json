@@ -1,0 +1,27 @@
+{
+  "version": "repositories-v0.1",
+  "repositories": [
+    {
+      "repo_id": "repo_001",
+      "path": "artifacts/repos/repo_001"
+    },
+    {
+      "repo_id": "repo_001_fixed",
+      "path": "artifacts/repos/repo_001_fixed",
+      "relation": {
+        "type": "fixed_version",
+        "of_repo_id": "repo_001",
+        "fixes": ["VULN-000001"]
+      }
+    },
+    {
+      "repo_id": "repo_002",
+      "path": "artifacts/repos/repo_002"
+    },
+    {
+      "repo_id": "repo_003_clean",
+      "path": "artifacts/repos/repo_003_clean"
+    }
+  ]
+}
+

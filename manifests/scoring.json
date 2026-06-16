@@ -1,0 +1,28 @@
+{
+  "version": "scoring-v0.1",
+  "strict_match": {
+    "enabled": true,
+    "line_window": 5,
+    "require_type": true,
+    "require_file": true,
+    "require_line": false,
+    "require_function": false,
+    "location_match_mode": "same_file_function_or_line",
+    "function_match_when_available": true,
+    "same_file_function_match": true,
+    "function_identity_fields": ["file", "function"],
+    "prefer_signature_when_available": true,
+    "line_match_when_function_missing": true
+  },
+  "duplicates": {
+    "count_duplicates_as_fp": false
+  },
+  "judge": {
+    "enabled": false,
+    "provider": "configurable",
+    "model": "configurable",
+    "only_when_strict_failed": true,
+    "use_for_leaderboard": false
+  }
+}
+

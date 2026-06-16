@@ -1,0 +1,23 @@
+{
+  "task_id": "TASK-000004",
+  "agent_id": "mock_noisy",
+  "status": "success",
+  "findings": [
+    {
+      "type": "sql_injection",
+      "cwe": [
+        "CWE-89"
+      ],
+      "file": "src/main/java/com/example/ExecController.java",
+      "function": "unused",
+      "start_line": 1,
+      "end_line": 1
+    }
+  ],
+  "run_metadata": {
+    "duration_seconds": 1.8e-05,
+    "cost": null,
+    "input_tokens": null,
+    "output_tokens": null
+  }
+}

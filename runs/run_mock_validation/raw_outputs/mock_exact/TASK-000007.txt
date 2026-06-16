@@ -1,0 +1,23 @@
+{
+  "task_id": "TASK-000007",
+  "agent_id": "mock_exact",
+  "status": "success",
+  "findings": [
+    {
+      "type": "command_injection",
+      "cwe": [
+        "CWE-78"
+      ],
+      "file": "src/main/java/com/example/ExecController.java",
+      "start_line": 6,
+      "end_line": 8,
+      "function": "runCommand"
+    }
+  ],
+  "run_metadata": {
+    "duration_seconds": 1.2e-05,
+    "cost": null,
+    "input_tokens": null,
+    "output_tokens": null
+  }
+}

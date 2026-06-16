@@ -1,0 +1,26 @@
+{
+  "version": "classification-mapping-v0.1",
+  "mappings": [
+    {
+      "domain_category": "coding",
+      "domain_category_name": "Coding",
+      "issue_category": "improper_input_validation",
+      "issue_category_name": "Improper input validation",
+      "issue_subcategory": "command_injection",
+      "issue_subcategory_name": "Command injection",
+      "cwe": ["CWE-78"],
+      "aliases": ["cmd_injection", "os_command_injection", "command injection"]
+    },
+    {
+      "domain_category": "coding",
+      "domain_category_name": "Coding",
+      "issue_category": "improper_input_validation",
+      "issue_category_name": "Improper input validation",
+      "issue_subcategory": "path_traversal",
+      "issue_subcategory_name": "Path traversal",
+      "cwe": ["CWE-22"],
+      "aliases": ["directory_traversal", "path traversal", "zip_slip"]
+    }
+  ]
+}
+

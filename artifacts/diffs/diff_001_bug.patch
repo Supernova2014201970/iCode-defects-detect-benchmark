@@ -1,0 +1,14 @@
+diff --git a/src/main/java/com/example/ExecController.java b/src/main/java/com/example/ExecController.java
+index 5d1cafe..badc0de 100644
+--- a/src/main/java/com/example/ExecController.java
++++ b/src/main/java/com/example/ExecController.java
+@@ -3,6 +3,9 @@ import java.io.IOException;
+ 
+ public class ExecController {
+     public Process runCommand(String userInput) throws IOException {
+-        return new ProcessBuilder("date").start();
++        String command = "sh -c " + userInput;
++        return Runtime.getRuntime().exec(command);
+     }
+ }
+

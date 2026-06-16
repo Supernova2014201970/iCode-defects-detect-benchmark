@@ -1,0 +1,146 @@
+{
+  "tasks": [
+    {
+      "suite_id": "suite_all_full_repo",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "vulnerability_hint": "none",
+      "scoring_scope": "all_known",
+      "repo_id": "repo_001",
+      "repo_path": "artifacts/repos/repo_001",
+      "target_vulnerabilities": [
+        "VULN-000001"
+      ],
+      "expected_absent_vulnerabilities": [],
+      "task_id": "TASK-000001",
+      "repeat_index": 1
+    },
+    {
+      "suite_id": "suite_all_full_repo",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "vulnerability_hint": "none",
+      "scoring_scope": "all_known",
+      "repo_id": "repo_001_fixed",
+      "repo_path": "artifacts/repos/repo_001_fixed",
+      "target_vulnerabilities": [],
+      "expected_absent_vulnerabilities": [],
+      "task_id": "TASK-000002",
+      "repeat_index": 1
+    },
+    {
+      "suite_id": "suite_all_full_repo",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "vulnerability_hint": "none",
+      "scoring_scope": "all_known",
+      "repo_id": "repo_002",
+      "repo_path": "artifacts/repos/repo_002",
+      "target_vulnerabilities": [
+        "VULN-000002"
+      ],
+      "expected_absent_vulnerabilities": [],
+      "task_id": "TASK-000003",
+      "repeat_index": 1
+    },
+    {
+      "suite_id": "suite_all_full_repo",
+      "mode": "full_repo",
+      "expectation": "detect",
+      "vulnerability_hint": "none",
+      "scoring_scope": "all_known",
+      "repo_id": "repo_003_clean",
+      "repo_path": "artifacts/repos/repo_003_clean",
+      "target_vulnerabilities": [],
+      "expected_absent_vulnerabilities": [],
+      "task_id": "TASK-000004",
+      "repeat_index": 1
+    },
+    {
+      "suite_id": "suite_all_diff",
+      "mode": "diff",
+      "expectation": "detect",
+      "vulnerability_hint": "none",
+      "scoring_scope": "target_only",
+      "diff_id": "DIFF-000001",
+      "patch_path": "artifacts/diffs/diff_001_bug.patch",
+      "context_repo_id": "repo_001",
+      "context_repo_path": "artifacts/repos/repo_001",
+      "target_vulnerabilities": [
+        "VULN-000001"
+      ],
+      "expected_absent_vulnerabilities": [],
+      "task_id": "TASK-000005",
+      "repeat_index": 1
+    },
+    {
+      "suite_id": "suite_all_diff",
+      "mode": "diff",
+      "expectation": "detect",
+      "vulnerability_hint": "none",
+      "scoring_scope": "target_only",
+      "diff_id": "DIFF-000002",
+      "patch_path": "artifacts/diffs/diff_002_bug.patch",
+      "context_repo_id": "repo_002",
+      "context_repo_path": "artifacts/repos/repo_002",
+      "target_vulnerabilities": [
+        "VULN-000002"
+      ],
+      "expected_absent_vulnerabilities": [],
+      "task_id": "TASK-000006",
+      "repeat_index": 1
+    },
+    {
+      "suite_id": "suite_command_injection_diff",
+      "mode": "diff",
+      "expectation": "detect",
+      "vulnerability_hint": "none",
+      "scoring_scope": "target_only",
+      "diff_id": "DIFF-000001",
+      "patch_path": "artifacts/diffs/diff_001_bug.patch",
+      "context_repo_id": "repo_001",
+      "context_repo_path": "artifacts/repos/repo_001",
+      "target_vulnerabilities": [
+        "VULN-000001"
+      ],
+      "expected_absent_vulnerabilities": [],
+      "task_id": "TASK-000007",
+      "repeat_index": 1
+    },
+    {
+      "suite_id": "suite_all_fixed_check",
+      "mode": "diff",
+      "expectation": "fixed",
+      "vulnerability_hint": "none",
+      "scoring_scope": "target_only",
+      "check_type": "fixed_check",
+      "diff_id": "DIFF-000001-FIX",
+      "patch_path": "artifacts/diffs/diff_001_fix.patch",
+      "context_repo_id": "repo_001_fixed",
+      "context_repo_path": "artifacts/repos/repo_001_fixed",
+      "target_vulnerabilities": [],
+      "expected_absent_vulnerabilities": [
+        "VULN-000001"
+      ],
+      "task_id": "TASK-000008",
+      "repeat_index": 1
+    },
+    {
+      "suite_id": "suite_selected_smoke",
+      "mode": "diff",
+      "expectation": "detect",
+      "vulnerability_hint": "none",
+      "scoring_scope": "target_only",
+      "diff_id": "DIFF-000001",
+      "patch_path": "artifacts/diffs/diff_001_bug.patch",
+      "context_repo_id": "repo_001",
+      "context_repo_path": "artifacts/repos/repo_001",
+      "target_vulnerabilities": [
+        "VULN-000001"
+      ],
+      "expected_absent_vulnerabilities": [],
+      "task_id": "TASK-000009",
+      "repeat_index": 1
+    }
+  ]
+}

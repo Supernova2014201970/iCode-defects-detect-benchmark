@@ -1,0 +1,35 @@
+{
+  "task_id": "TASK-000003",
+  "agent_id": "mock_noisy",
+  "status": "success",
+  "findings": [
+    {
+      "type": "path_traversal",
+      "cwe": [
+        "CWE-22"
+      ],
+      "file": "src/app.py",
+      "start_line": 5,
+      "end_line": 7,
+      "function": "read_user_file",
+      "finding_id": "F-001"
+    },
+    {
+      "type": "sql_injection",
+      "cwe": [
+        "CWE-89"
+      ],
+      "file": "src/app.py",
+      "function": "unused",
+      "start_line": 1,
+      "end_line": 1,
+      "finding_id": "F-002"
+    }
+  ],
+  "run_metadata": {
+    "duration_seconds": 3.2e-05,
+    "cost": null,
+    "input_tokens": null,
+    "output_tokens": null
+  }
+}

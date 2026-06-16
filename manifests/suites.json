@@ -1,0 +1,60 @@
+{
+  "version": "suites-v0.1",
+  "suites": [
+    {
+      "suite_id": "suite_all_full_repo",
+      "mode": "full_repo",
+      "selection": {
+        "scope": "all"
+      },
+      "repeat": 1,
+      "vulnerability_hint": "none",
+      "scoring_scope": "all_known"
+    },
+    {
+      "suite_id": "suite_all_diff",
+      "mode": "diff",
+      "selection": {
+        "scope": "all"
+      },
+      "repeat": 1,
+      "vulnerability_hint": "none",
+      "scoring_scope": "target_only"
+    },
+    {
+      "suite_id": "suite_command_injection_diff",
+      "mode": "diff",
+      "selection": {
+        "scope": "classification",
+        "issue_subcategory": "command_injection"
+      },
+      "repeat": 1,
+      "vulnerability_hint": "none",
+      "scoring_scope": "target_only"
+    },
+    {
+      "suite_id": "suite_all_fixed_check",
+      "mode": "fixed_check",
+      "selection": {
+        "scope": "all",
+        "only_with_fix_artifact": true
+      },
+      "repeat": 1,
+      "vulnerability_hint": "none",
+      "scoring_scope": "target_only"
+    },
+    {
+      "suite_id": "suite_selected_smoke",
+      "mode": "diff",
+      "selection": {
+        "scope": "explicit",
+        "diff_ids": ["DIFF-000001"],
+        "vulnerability_ids": ["VULN-000001"]
+      },
+      "repeat": 1,
+      "vulnerability_hint": "none",
+      "scoring_scope": "target_only"
+    }
+  ]
+}
+

@@ -1,0 +1,12 @@
+diff --git a/src/app.py b/src/app.py
+index 7a41e22..77a51da 100644
+--- a/src/app.py
++++ b/src/app.py
+@@ -2,5 +2,6 @@ from pathlib import Path
+ BASE_DIR = Path("/srv/uploads")
+ 
+ def read_user_file(filename: str) -> str:
+-    target = (BASE_DIR / filename).resolve()
++    target = BASE_DIR / filename
+     return target.read_text(encoding="utf-8")
+
