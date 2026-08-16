@@ -1,0 +1,28 @@
+{
+  "scan_metadata": {
+    "project_path": "<项目根目录路径>",
+    "scan_time": "<ISO 8601格式的扫描时间>",
+    "total_files_scanned": "<扫描的文件总数>",
+    "total_vulnerabilities_found": "<发现的漏洞总数>"
+  },
+  "vulnerabilities": [
+    {
+      "id": "<唯一标识符，如001>",
+      "severity": "<严重程度：CRITICAL/HIGH/MEDIUM/LOW>",
+      "type": "<漏洞类型，如 'buffer oversize'>",
+      "file": "<文件路径，使用'/'作为分隔符>",
+      "line": "<漏洞所在行号>",
+      "function": "<漏洞函数名>",
+      "start_line": "<漏洞函数起始行>",
+      "end_line": "<漏洞函数结束行>",
+      "description": "<问题描述，使用utf-8无BOM格式，若描述中出现特殊字符，需要转义，避免破坏json格式>",
+      "recommendation": "<修复建议，使用utf-8无BOM格式，若建议中出现特殊字符，需要转义，避免破坏json格式>"
+    }
+  ],
+  "summary": {
+    "critical": "<严重漏洞数量>",
+    "high": "<高危漏洞数量>",
+    "medium": "<中危漏洞数量>",
+    "low": "<低危漏洞数量>"
+  }
+}

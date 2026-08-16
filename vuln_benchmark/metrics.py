@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections import defaultdict
-from statistics import mean
+from statistics import mean, pstdev
 from typing import Any
 
 from .registry import Registry
@@ -15,7 +15,7 @@ def aggregate(evaluations: list[dict[str, Any]], registry: Registry | None = Non
     )
 
     agent_summary = {
-        agent_id: _summarize(items)
+        agent_id: _summarize(items, True)
         for agent_id, items in sorted(by_agent.items())
     }
     mode_summary = {
@@ -48,7 +48,59 @@ def _group_by(
     return grouped
 
 
-def _summarize(items: list[dict[str, Any]]) -> dict[str, Any]:
+def multi_list_intersection(finding_list):
+    inter = set(finding_list[0])
+
+    for item in finding_list[1:]:
+        inter = inter.intersection(set(item))
+
+    return inter
+
+def multi_list_union(finding_list):
+    un = set(finding_list[0])
+
+    for item in finding_list[1:]:
+        un = un.union(set(item))
+
+    return un
+
+def caculate_stable(items):
+    # 计算告警稳定性
+    repeat_dict = _group_by(items, lambda item: item["repeat_index"])
+    if len(repeat_dict) < 3:
+        return None, 0, 0
+    
+    repeat_finding_list = []
+    precision_list = []
+    recall_list = []
+    for results in repeat_dict.values():
+        finding_list = []
+        tp_num, fp_num, fn_num = 0, 0, 0
+        for result in results:
+            tp_num = tp_num + len(result.get("tp"))
+            fp_num = fp_num + len(result.get("fp"))
+            fn_num = fn_num + len(result.get("fn"))
+
+            finding_list.extend(result.get("tp"))
+            for finding in result.get("fp"):
+                finding_list.append(finding["type"] + ":" + finding["file"] + ":" + str(finding["line"]))
+        precision = _safe_div(tp_num, tp_num + fp_num)
+        precision_list.append(precision if precision else 0)
+        recall = _safe_div(tp_num, tp_num + fn_num)
+        recall_list.append(recall if recall else 0)
+        repeat_finding_list.append(finding_list)
+
+    precision_pstdev = pstdev(precision_list)
+    recall_pstdev = pstdev(recall_list)
+
+    intersection = multi_list_intersection(repeat_finding_list)
+    union = multi_list_union(repeat_finding_list)
+    stable = _safe_div(len(intersection), len(union))
+
+    return stable, precision_pstdev, recall_pstdev
+
+
+def _summarize(items: list[dict[str, Any]], flag = False) -> dict[str, Any]:
     tp = sum(len(item["tp"]) for item in items)
     fp = sum(len(item["fp"]) for item in items)
     fn = sum(len(item["fn"]) for item in items)
@@ -63,6 +115,10 @@ def _summarize(items: list[dict[str, Any]]) -> dict[str, Any]:
         if item.get("duration_seconds") is not None
     ]
 
+    stable, precision_pstdev, recall_pstdev = None, 0, 0
+    if flag:
+        stable, precision_pstdev, recall_pstdev = caculate_stable(items)
+
     precision = _safe_div(tp, tp + fp)
     recall = _safe_div(tp, tp + fn)
     return {
@@ -70,11 +126,14 @@ def _summarize(items: list[dict[str, Any]]) -> dict[str, Any]:
         "tp": tp,
         "fp": fp,
         "fn": fn,
+        "stable": stable,
         "duplicates": duplicates,
         "invalid_outputs": invalid,
         "review_candidates": review_candidates,
-        "precision": precision,
+        "precision": precision if precision else None,
+        "precision_pstdev": round(precision_pstdev, 6),
         "recall": recall,
+        "recall_pstdev": round(recall_pstdev, 6),
         "f1": _f1(precision, recall),
         "fixed_check_pass_rate": _safe_div(fixed_passed, len(fixed_items)),
         "duration_mean": round(mean(durations), 6) if durations else None,

@@ -1,6 +1,13 @@
 from __future__ import annotations
 
 import json
+try:
+    from tqdm import tqdm
+except ImportError:
+    print("tqdm not found")
+    def tqdm(iterable, **kwargs):
+        return iterable
+import multiprocessing
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -15,14 +22,42 @@ from .tasks import generate_tasks
 from .validation import validate_registry
 
 
+def executeSubTask(subTask):
+    root_path = subTask["root_path"]
+    run_dir = subTask["run_dir"]
+    registry = subTask["registry"]
+    agent = subTask["agent"]
+    task = subTask["task"]
+
+    raw_path = run_dir / "raw_outputs" / agent["agent_id"] / f"{task['task_id']}.json"
+    adapter = get_adapter(agent["adapter"])
+
+    raw_output = adapter.run(task, agent, registry, root_path, raw_path)
+
+    normalized = normalize_raw_output(raw_output, task, agent["agent_id"], registry)
+    normalized_path = run_dir / "normalized_outputs" / agent["agent_id"] / f"{task['task_id']}.json"
+    normalized_path.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(normalized_path, normalized)
+
+    return evaluate_task(registry, task, normalized)
+
+
+def executeSubTaskMultiprocessing(SubTaskList):
+
+    with multiprocessing.Pool(processes=1) as pool:
+        #results = pool.map(executeSubTask, SubTaskList)
+        results = list(tqdm(pool.imap_unordered(executeSubTask, SubTaskList), total=len(SubTaskList)))
+    return results
+
 def run_benchmark(
     root: str | Path = ".",
+    repo_root: str | Path = "../defects-applications/",
     suite_ids: list[str] | None = None,
     agent_ids: list[str] | None = None,
     run_id: str | None = None,
 ) -> dict[str, Any]:
     root_path = Path(root).resolve()
-    registry = Registry.load(root_path)
+    registry = Registry.load(root_path, repo_root)
     validation = validate_registry(registry)
     if not validation.ok:
         raise RuntimeError("Manifest validation failed: " + "; ".join(validation.errors))
@@ -46,26 +81,28 @@ def run_benchmark(
         raise RuntimeError("No agents selected")
 
     evaluations: list[dict[str, Any]] = []
+    sub_task_list = []
     for agent in agents:
-        adapter = get_adapter(agent["adapter"])
         tool_profile = profiles[agent["tool_profile"]]
         for task in tasks:
-            raw_output = adapter.run(task, agent, tool_profile, registry)
-            raw_path = run_dir / "raw_outputs" / agent["agent_id"] / f"{task['task_id']}.txt"
-            raw_path.parent.mkdir(parents=True, exist_ok=True)
-            raw_path.write_text(raw_output, encoding="utf-8")
+            # 生成任务，加入列表
+            sub_task = {
+                "root_path": root_path,
+                "run_dir": run_dir,
+                "registry": registry,
+                "agent": agent,
+                "task": task
+            }
+            sub_task_list.append(sub_task)
 
-            normalized = normalize_raw_output(raw_output, task, agent["agent_id"])
-            normalized_path = (
-                run_dir
-                / "normalized_outputs"
-                / agent["agent_id"]
-                / f"{task['task_id']}.json"
-            )
-            normalized_path.parent.mkdir(parents=True, exist_ok=True)
-            _write_json(normalized_path, normalized)
+    # 多线程执行任务
+    print("start time: ", datetime.now())
+    evaluations = executeSubTaskMultiprocessing(sub_task_list)
 
-            evaluations.append(evaluate_task(registry, task, normalized))
+    print("end time: ", datetime.now())
+
+    count = sum(1 for item in evaluations if item.get("status") != "success")
+    print(f"sub_task failed for: {count}  out of: {len(sub_task_list)}")
 
     summary = aggregate(evaluations, registry)
     metrics = {

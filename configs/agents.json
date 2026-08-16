@@ -1,33 +1,31 @@
 {
   "agents": [
     {
-      "agent_id": "mock_exact",
-      "agent_type": "mock",
+      "agent_id": "chrys_default",
+      "agent_type": "chrys",
       "model": "deterministic",
-      "adapter": "adapters.mock",
+      "adapter": "chrys",
+      "command": ["chrys", "run", "-a", "Code"],
+      "prompt": "你是一个资深的代码安全审计专家，专注于发现后端代码中的SQL注入（SQL Injection）风险。请对project项目进行深度扫描，挖掘其中的风险点，并将发现的所有风险严格按照format格式输出到项目目录下jsonFile中。",
+      "diff_prompt": "你是一个资深的代码安全审计专家，专注于发现后端代码中的SQL注入（SQL Injection）风险。请对git diff格式的patch包中代码变更内容及project目录下源代码信息进行深度分析，将本次变更引入的所有风险严格按照format格式输出到项目目录下jsonFile中。",
+      "fix_prompt": "你是一个资深的代码安全审计专家，专注于发现后端代码中的SQL注入（SQL Injection）风险。请对git diff格式的patch包中代码变更内容及project目录下源代码信息进行深度分析，将未修复的所有风险严格按照format格式输出到项目目录下jsonFile中。",
       "behavior": "exact",
       "tool_profile": "static_readonly",
-      "timeout_seconds": 1800,
+      "timeout_seconds": 14400,
       "max_output_bytes": 1048576
     },
     {
-      "agent_id": "mock_partial",
-      "agent_type": "mock",
+      "agent_id": "opencode_default",
+      "agent_type": "opencode",
       "model": "deterministic",
-      "adapter": "adapters.mock",
-      "behavior": "partial",
+      "adapter": "opencode",
+      "command": ["C:/Users/h30033938/AppData/Roaming/npm/node_modules/opencode-ai/bin/opencode.exe", "run", "-m", "lingxi/lingxi"],
+      "prompt": "你是一个资深的代码安全审计专家，专注于发现后端代码中的SQL注入（SQL Injection）风险。请对project项目进行深度扫描，挖掘其中的风险点，并将发现的所有风险严格按照format格式输出到项目目录下jsonFile中。",
+      "diff_prompt": "你是一个资深的代码安全审计专家，专注于发现后端代码中的SQL注入（SQL Injection）风险。请对git diff格式的patch包中代码变更内容及project目录下源代码信息进行深度分析，将本次变更引入的所有风险严格按照format格式输出到项目目录下jsonFile中。",
+      "fix_prompt": "你是一个资深的代码安全审计专家，专注于发现后端代码中的SQL注入（SQL Injection）风险。请对git diff格式的patch包中代码变更内容及project目录下源代码信息进行深度分析，将未修复的所有风险严格按照format格式输出到项目目录下jsonFile中。",
+      "behavior": "exact",
       "tool_profile": "static_readonly",
-      "timeout_seconds": 1800,
-      "max_output_bytes": 1048576
-    },
-    {
-      "agent_id": "mock_noisy",
-      "agent_type": "mock",
-      "model": "deterministic",
-      "adapter": "adapters.mock",
-      "behavior": "noisy",
-      "tool_profile": "static_readonly",
-      "timeout_seconds": 1800,
+      "timeout_seconds": 14400,
       "max_output_bytes": 1048576
     }
   ]

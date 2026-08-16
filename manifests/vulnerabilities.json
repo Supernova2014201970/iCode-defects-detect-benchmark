@@ -13,6 +13,7 @@
       "location": {
         "file": "src/main/java/com/example/ExecController.java",
         "function": "runCommand",
+        "line": 8,
         "start_line": 6,
         "end_line": 8
       }
@@ -29,6 +30,7 @@
       "location": {
         "file": "src/app.py",
         "function": "read_user_file",
+        "line": 7,
         "start_line": 5,
         "end_line": 7
       }

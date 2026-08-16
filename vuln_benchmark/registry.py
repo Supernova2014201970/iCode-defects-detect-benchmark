@@ -9,29 +9,46 @@ from typing import Any
 MANIFEST_FILES = {
     "repositories": "repositories.json",
     "diffs": "diffs.json",
-    "vulnerabilities": "vulnerabilities.json",
+    # "vulnerabilities": "vulnerabilities.json",
     "classification_mapping": "classification_mapping.json",
     "issue_assets": "issue_assets.json",
     "suites": "suites.json",
     "scoring": "scoring.json",
+    "format": "format.json"
 }
 
 
 @dataclass(frozen=True)
 class Registry:
     root: Path
+    repo_root: Path
     manifests: dict[str, Any]
 
     @classmethod
-    def load(cls, root: str | Path) -> "Registry":
+    def load(cls, root: str | Path, repo_root: str | Path) -> "Registry":
         root_path = Path(root).resolve()
         manifest_dir = root_path / "manifests"
         manifests: dict[str, Any] = {}
+        # 解析配置文件
         for key, filename in MANIFEST_FILES.items():
             path = manifest_dir / filename
             with path.open("r", encoding="utf-8") as handle:
                 manifests[key] = json.load(handle)
-        return cls(root=root_path, manifests=manifests)
+
+        # 遍历仓库，汇总告警信息
+        vuln_list = []
+        vuln_dict = {}
+        for item in manifests["repositories"].get("repositories", []):
+            json_file = str(repo_root / item["path"]) + ".json"
+            if not Path(json_file).exists():
+                continue
+            with open(json_file, "r", encoding="utf-8") as f:
+                json_data = json.load(f)
+                vuln_list.extend(json_data["vulnerabilities"])
+        vuln_dict["vulnerabilities"] = vuln_list
+        manifests["vulnerabilities"] = vuln_dict
+
+        return cls(root=root_path, repo_root=repo_root, manifests=manifests)
 
     @property
     def repositories(self) -> dict[str, dict[str, Any]]:
@@ -67,13 +84,13 @@ class Registry:
         return self.manifests["scoring"]
 
     def repo_abs_path(self, repo_id: str) -> Path:
-        return self.root / self.repositories[repo_id]["path"]
+        return self.repo_root / self.repositories[repo_id]["path"]
 
     def repo_rel_path(self, repo_id: str) -> str:
         return self.repositories[repo_id]["path"]
 
     def patch_abs_path(self, diff_id: str) -> Path:
-        return self.root / self.diffs[diff_id]["patch_path"]
+        return self.repo_root / self.diffs[diff_id]["patch_path"]
 
     def vulnerabilities_for_repo(self, repo_id: str) -> list[dict[str, Any]]:
         return [

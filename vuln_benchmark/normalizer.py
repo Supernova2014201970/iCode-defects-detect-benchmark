@@ -4,7 +4,7 @@ import json
 from typing import Any
 
 
-def normalize_raw_output(raw_output: str, task: dict[str, Any], agent_id: str) -> dict[str, Any]:
+def normalize_raw_output(raw_output: str, task: dict[str, Any], agent_id: str, registry) -> dict[str, Any]:
     try:
         payload = json.loads(raw_output)
     except json.JSONDecodeError:
@@ -24,7 +24,16 @@ def normalize_raw_output(raw_output: str, task: dict[str, Any], agent_id: str) -
     for index, finding in enumerate(findings, start=1):
         if not isinstance(finding, dict):
             return _empty_result(task, agent_id, "invalid_output")
-        item = dict(finding)
+        # item = dict(finding)
+        item = {
+            "type": finding["type"],
+            "cwe": get_cwe_by_type(finding["type"], registry.manifests),
+            "file": finding["file"],
+            "line": finding["line"],
+            "start_line": finding["start_line"],
+            "end_line": finding["end_line"],
+            "function": finding["function"]
+        }
         item.setdefault("finding_id", f"F-{index:03d}")
         if "end_line" not in item and "start_line" in item:
             item["end_line"] = item["start_line"]
@@ -37,6 +46,16 @@ def normalize_raw_output(raw_output: str, task: dict[str, Any], agent_id: str) -
         "findings": normalized_findings,
         "run_metadata": payload.get("run_metadata", {}),
     }
+
+def get_cwe_by_type(type, manifests):
+    classification_mapping = manifests["classification_mapping"]["mappings"]
+    for category in classification_mapping:
+        if type == category["issue_subcategory"]:
+            return category["cwe"]
+        if type in category["aliases"]:
+            return category["cwe"]
+    return []
+
 
 
 def _empty_result(task: dict[str, Any], agent_id: str, status: str) -> dict[str, Any]:

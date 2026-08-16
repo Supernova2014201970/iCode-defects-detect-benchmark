@@ -124,8 +124,8 @@ def _fixed_check_tasks(registry: Registry, suite: dict[str, Any]) -> list[dict[s
         if selection.get("only_with_fix_artifact", False) and not absent_ids:
             continue
         task = _base_task(suite, expectation="fixed")
-        task["mode"] = "diff"
-        task["check_type"] = "fixed_check"
+        # task["mode"] = "diff"
+        # task["check_type"] = "fixed_check"
         task.update(
             {
                 "diff_id": diff_id,

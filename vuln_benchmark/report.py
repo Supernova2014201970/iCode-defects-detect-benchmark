@@ -45,8 +45,8 @@ def write_html_report(
   <table>
     <thead>
       <tr>
-        <th>Agent</th><th>Tasks</th><th>TP</th><th>FP</th><th>FN</th>
-        <th>Precision</th><th>Recall</th><th>F1</th><th>Fixed Pass</th><th>Score</th>
+        <th>Agent</th><th>Tasks</th><th>TP</th><th>FP</th><th>FN</th><th>stable(vuln)</th><th>duration_mean</th>
+        <th>Precision</th><th>pstdev(precision)</th><th>Recall</th><th>pstdev(recall)</th><th>F1</th><th>Fixed Pass</th><th>Score</th>
       </tr>
     </thead>
     <tbody>{rows}</tbody>
@@ -67,8 +67,12 @@ def _agent_row(agent_id: str, item: dict[str, Any]) -> str:
         f"<td>{item['tp']}</td>"
         f"<td>{item['fp']}</td>"
         f"<td>{item['fn']}</td>"
+        f"<td>{_fmt(item['stable'])}</td>"
+        f"<td>{_fmt(item['duration_mean'])}</td>"
         f"<td>{_fmt(item['precision'])}</td>"
+        f"<td>{_fmt(item['precision_pstdev'])}</td>"
         f"<td>{_fmt(item['recall'])}</td>"
+        f"<td>{_fmt(item['recall_pstdev'])}</td>"
         f"<td>{_fmt(item['f1'])}</td>"
         f"<td>{_fmt(item['fixed_check_pass_rate'])}</td>"
         f"<td>{_fmt(item.get('leaderboard_score'))}</td>"

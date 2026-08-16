@@ -41,7 +41,7 @@ def validate_registry(registry: Registry) -> ValidationResult:
     vulnerabilities = registry.vulnerabilities
 
     for repo_id, repo in repos.items():
-        repo_path = registry.root / repo["path"]
+        repo_path = registry.repo_root / repo["path"]
         if not repo_path.exists():
             result.errors.append(f"Repository path does not exist: {repo_id} -> {repo['path']}")
         relation = repo.get("relation")
@@ -76,7 +76,7 @@ def validate_registry(registry: Registry) -> ValidationResult:
             if not abs_file.exists():
                 result.errors.append(f"Vulnerability {vuln_id} file does not exist: {rel_file}")
             else:
-                line_count = len(abs_file.read_text(encoding="utf-8").splitlines())
+                line_count = len(abs_file.read_text(encoding="utf-8", errors='ignore').splitlines())
                 if location.get("end_line", 0) > line_count:
                     result.errors.append(
                         f"Vulnerability {vuln_id} end_line exceeds file length: "
@@ -92,7 +92,7 @@ def validate_registry(registry: Registry) -> ValidationResult:
             result.warnings.append(f"Vulnerability {vuln_id} classification has no mapping: {key}")
 
     for diff_id, diff in registry.diffs.items():
-        patch_path = registry.root / diff["patch_path"]
+        patch_path = registry.repo_root / diff["patch_path"]
         if not patch_path.exists():
             result.errors.append(f"Diff patch does not exist: {diff_id} -> {diff['patch_path']}")
         context_repo_id = diff.get("context_repo_id")

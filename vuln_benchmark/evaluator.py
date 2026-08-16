@@ -86,6 +86,7 @@ def _base_result(task: dict[str, Any], normalized_output: dict[str, Any]) -> dic
     return {
         "task_id": task["task_id"],
         "suite_id": task["suite_id"],
+        "repeat_index": task["repeat_index"],
         "agent_id": normalized_output.get("agent_id"),
         "mode": "fixed_check" if task.get("expectation") == "fixed" else task.get("mode"),
         "expectation": task.get("expectation"),

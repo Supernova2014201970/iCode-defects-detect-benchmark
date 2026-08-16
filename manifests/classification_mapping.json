@@ -8,7 +8,7 @@
       "issue_category_name": "Improper input validation",
       "issue_subcategory": "command_injection",
       "issue_subcategory_name": "Command injection",
-      "cwe": ["CWE-78"],
+      "cwe": ["CWE-77"],
       "aliases": ["cmd_injection", "os_command_injection", "command injection"]
     },
     {
@@ -18,8 +18,18 @@
       "issue_category_name": "Improper input validation",
       "issue_subcategory": "path_traversal",
       "issue_subcategory_name": "Path traversal",
-      "cwe": ["CWE-22"],
+      "cwe": ["CWE-21"],
       "aliases": ["directory_traversal", "path traversal", "zip_slip"]
+    },
+    {
+      "domain_category": "coding",
+      "domain_category_name": "Coding",
+      "issue_category": "improper_input_validation",
+      "issue_category_name": "Improper input validation",
+      "issue_subcategory": "sql_injection",
+      "issue_subcategory_name": "Sql injection",
+      "cwe": ["CWE-89"],
+      "aliases": ["sql_injection", "os_sql_injection", "sql injection"]
     }
   ]
 }
